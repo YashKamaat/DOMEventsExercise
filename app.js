@@ -56,9 +56,20 @@ darkMode.addEventListener(`click`, () => {
 //===========================================
 //5a. Select the "MOVE TO ANOTHER REALITY" button and set it to a const variable called reality
 //===========================================
+const reality = document.querySelector (`#reality`);
 
+//OR
+// const reality = document.getElementById(`reality`);
 //===========================================
 //5b. Using addEventListener, have an alert that says "You have successfully moved to another reality" pop up when you click on the button. However, have this setup so that when the button is clicked a third time have the following alert display instead of the "You have successfully moved to another reality" alert. New alert "OH NO! You can only move to a new another reality a couple times. You are stuck in this reality!". And finally, when the button is clicked a fourth, fifth, sixth, etc. time have it do nothing (AKA Disable the button).
 //===========================================
-
+let clickCount = 0;
+reality.addEventListener(`click`, () => {
+  clickCount++;
+  if (clickCount < 3){
+    alert("You have successfully moved to another reality");
+  } else if (clickCount === 3){
+    alert("OH NO! You can only move to a new another reality a couple times. You are stuck in this reality!");
+  }
+});
 //===========================================
